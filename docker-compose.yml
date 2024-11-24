@@ -1,0 +1,18 @@
+services:
+  victim:
+    image: php:8.0-cli
+    volumes:
+      - ./client:/var/www/html
+    working_dir: /var/www/html
+    command: bash -c "php -S 0:9090 -t /var/www/html"
+    ports:
+      - "9090:9090"
+
+  attacker:
+    image: php:8.0-cli
+    volumes:
+      - ./server:/var/www/html
+    working_dir: /var/www/html
+    command: bash -c "php -S 0:9091 -t /var/www/html"
+    ports:
+      - "9091:9091"
