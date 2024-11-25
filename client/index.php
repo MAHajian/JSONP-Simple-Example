@@ -1,4 +1,5 @@
-<html lang="en">
+<?php
+echo '<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>JSONP</title>
@@ -9,15 +10,16 @@
     <button onclick="get()" style="margin-top: 10">Get</button>
     <script>
         function get() {
-            const script = document.createElement('script')
-            script.src = 'http://127.0.0.1:9091/jsonp.php'
+            const script = document.createElement("script")
+            script.src = "http://127.0.0.1:9091/jsonp.php"
             document.body.appendChild(script)
         }
 
         function updateDOM(obj) {
-            document.getElementById('output').innerHTML = `Name: ${obj.name}`;
+            document.getElementById("output").innerHTML = `Name: ${obj.name}`;
             alert(`Welcome ${obj.username}!`)
         }
     </script>
 </body>
-</html>
+</html>';
+?>
