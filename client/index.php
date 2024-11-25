@@ -6,8 +6,7 @@ exit('<html lang="en">
 </head>
 <body>
     <h1>JSONP Practice</h1>
-    <span id="output"></span><br>
-    <button onclick="get()" style="margin-top: 10">Get</button>
+    <button id="get" onclick="get()">Get</button>
     <script>
         function get() {
             const script = document.createElement("script")
@@ -16,8 +15,13 @@ exit('<html lang="en">
         }
 
         function updateDOM(obj) {
-            document.getElementById("output").innerHTML = `Name: ${obj.name}`;
-            alert(`Welcome ${obj.username}!`)
+            const result = document.createElement("p");
+            result.innerHTML = obj.name
+            const parent = document.getElementById("get").parentNode
+            const btn = document.getElementById("get");
+            parent.insertBefore(result, btn);
+            alert(`Welcome ${obj.username}!`);
+            console.log(obj);
         }
     </script>
 </body>
