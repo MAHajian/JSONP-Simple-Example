@@ -1,5 +1,5 @@
 <?php
-echo '<html lang="en">
+exit('<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>JSONP</title>
@@ -21,5 +21,5 @@ echo '<html lang="en">
         }
     </script>
 </body>
-</html>';
+</html>');
 ?>
